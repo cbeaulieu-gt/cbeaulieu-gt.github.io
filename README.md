@@ -1,0 +1,42 @@
+# Christopher M. Beaulieu — Personal Portfolio
+
+Personal portfolio site for Christopher M. Beaulieu, Senior Software Engineer. Single-page static site hosted on GitHub Pages.
+
+**Live site:** https://cbeaulieu-gt.github.io
+
+---
+
+## Built with
+
+- HTML5
+- CSS3 — custom properties, Flexbox, Grid
+- Vanilla JavaScript
+- GitHub Pages
+
+---
+
+## Running locally
+
+No build step required. Open `index.html` directly in a browser, or serve it with any static file server:
+
+```bash
+# Python
+python -m http.server 8080
+
+# Node (npx)
+npx serve .
+```
+
+Then visit `http://localhost:8080`.
+
+---
+
+## Customizing
+
+If you want to use this as a template, search `index.html` for `<!-- CUSTOMIZE -->` comments. Each one marks a section with values you should replace — name, title, description, links, project entries, and so on.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).

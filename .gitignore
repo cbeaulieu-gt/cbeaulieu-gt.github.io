@@ -1,0 +1,19 @@
+# Claude Code IDE config — not part of the project
+.claude/
+
+# Personal task tracking — not part of the project
+TODO.md
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor config/state
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules — in case someone forks and adds tooling
+node_modules/
