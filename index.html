@@ -561,11 +561,13 @@
     }
 
     /* ── Drawer panel (mobile only) ─────────────────────── */
-    /* position: absolute floats the drawer as its own layer below the nav bar,
-       preventing the parent's backdrop-filter from making the background transparent */
+    /* Drawer is a sibling of <nav>, not a child — this is intentional.
+       A child of a backdrop-filter element is trapped in its compositing layer
+       and cannot paint an opaque background over content below. As a sibling,
+       the drawer renders in its own layer with a fully solid background. */
     .nav-drawer {
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 44px;
       left: 0;
       right: 0;
       background: var(--bg-base);
@@ -767,17 +769,19 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-drawer" hidden>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#stack">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
   </nav>
+  <!-- Drawer is a sibling of nav (not a child) so it renders outside the
+       nav's backdrop-filter compositing layer and gets a truly opaque background -->
+  <div class="nav-drawer" hidden>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#stack">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
   <!-- =====================================================
        HERO SECTION
