@@ -660,13 +660,24 @@
       }
 
       .site-nav ul {
-        gap: 16px;
-        height: 38px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        padding: 0 16px;
+        height: auto;
+        min-height: 38px;
+      }
+
+      .site-nav ul::-webkit-scrollbar {
+        display: none;
       }
 
       .site-nav a {
         font-size: 11px;
         letter-spacing: 0.07em;
+        white-space: nowrap;
       }
 
       .hero-links {
