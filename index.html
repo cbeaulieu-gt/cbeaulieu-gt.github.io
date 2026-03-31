@@ -542,6 +542,69 @@
       color: var(--accent) !important;
     }
 
+    /* ── Hamburger button (mobile only) ─────────────────── */
+    .nav-hamburger {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 20px;
+      line-height: 1;
+      margin-left: auto;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    /* ── Drawer panel (mobile only) ─────────────────────── */
+    .nav-drawer {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+    }
+
+    .nav-drawer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-drawer li a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+      opacity: 1;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-drawer li a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    .nav-drawer li a.nav-active {
+      color: var(--accent) !important;
+    }
+
+    /* ── Open state ─────────────────────────────────────── */
+    .site-nav.nav-open .nav-hamburger {
+      color: var(--text-primary);
+    }
+
     /* =====================================================
        BACK TO TOP BUTTON
     ===================================================== */
@@ -660,24 +723,11 @@
       }
 
       .site-nav ul {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 20px;
-        padding: 0 16px;
-        height: auto;
-        min-height: 38px;
-      }
-
-      .site-nav ul::-webkit-scrollbar {
         display: none;
       }
 
-      .site-nav a {
-        font-size: 11px;
-        letter-spacing: 0.07em;
-        white-space: nowrap;
+      .nav-hamburger {
+        display: flex;
       }
 
       .hero-links {
@@ -702,6 +752,7 @@
        STICKY NAVIGATION BAR
   ====================================================== -->
   <nav class="site-nav" aria-label="Site navigation">
+    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#stack">Skills</a></li>
@@ -710,6 +761,16 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav-drawer" hidden>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- =====================================================
@@ -1067,28 +1128,100 @@
     // Copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // ── Hamburger / drawer ────────────────────────────────────────────────────
+    const siteNav = document.querySelector('.site-nav');
+    const hamburger = document.querySelector('.nav-hamburger');
+    const drawer = document.querySelector('.nav-drawer');
+
+    function openDrawer() {
+      siteNav.classList.add('nav-open');
+      drawer.removeAttribute('hidden');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.innerHTML = '&#10005;';
+    }
+
+    function closeDrawer() {
+      siteNav.classList.remove('nav-open');
+      drawer.setAttribute('hidden', '');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.innerHTML = '&#9776;';
+    }
+
+    hamburger.addEventListener('click', () => {
+      siteNav.classList.contains('nav-open') ? closeDrawer() : openDrawer();
+    });
+
+    // Close when a drawer link is tapped
+    drawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && siteNav.classList.contains('nav-open')) {
+        closeDrawer();
+      }
+    });
+
+    // Close when clicking outside the nav
+    document.addEventListener('click', (e) => {
+      if (siteNav.classList.contains('nav-open') && !siteNav.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+
     // ── Scroll spy: highlight the nav link for whichever section is in view ──
-    // rootMargin pushes the active trigger point to the top 20% of the viewport,
-    // so the link activates as the section reaches the upper portion of the screen.
-    const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+    // Uses a Set to track all currently-intersecting sections, then picks the
+    // topmost one so only a single link is ever highlighted at a time.
+    const navLinks = document.querySelectorAll('.site-nav a[href^="#"], .nav-drawer a[href^="#"]');
+    const intersectingSections = new Set();
 
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            navLinks.forEach((link) => link.classList.remove('nav-active'));
-            const active = document.querySelector(
-              `.site-nav a[href="#${entry.target.id}"]`
-            );
-            if (active) active.classList.add('nav-active');
+            intersectingSections.add(entry.target.id);
+          } else {
+            intersectingSections.delete(entry.target.id);
           }
         });
+
+        // Pick the topmost visible section: smallest non-negative top, falling
+        // back to smallest absolute value when every section top is negative.
+        let activeId = null;
+        let bestTop = Infinity;
+        let bestAbsTop = Infinity;
+
+        intersectingSections.forEach((id) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const top = el.getBoundingClientRect().top;
+          if (top >= 0 && top < bestTop) {
+            bestTop = top;
+            activeId = id;
+          } else if (activeId === null && Math.abs(top) < bestAbsTop) {
+            bestAbsTop = Math.abs(top);
+            activeId = id;
+          }
+        });
+
+        navLinks.forEach((link) => link.classList.remove('nav-active'));
+        if (activeId) {
+          document.querySelectorAll(
+            `.site-nav a[href="#${activeId}"], .nav-drawer a[href="#${activeId}"]`
+          ).forEach((link) => link.classList.add('nav-active'));
+        }
       },
       { rootMargin: '-20% 0px -75% 0px', threshold: 0 }
     );
 
     document.querySelectorAll('section[id]').forEach((section) => {
       sectionObserver.observe(section);
+    });
+
+    // Blur nav links after click to clear browser focus ring
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => link.blur());
     });
 
     // ── Back to top button ────────────────────────────────────────────────────
