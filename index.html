@@ -561,10 +561,16 @@
     }
 
     /* ── Drawer panel (mobile only) ─────────────────────── */
+    /* position: absolute floats the drawer as its own layer below the nav bar,
+       preventing the parent's backdrop-filter from making the background transparent */
     .nav-drawer {
-      background: var(--bg-surface);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg-base);
       border-bottom: 1px solid var(--border);
-      width: 100%;
+      z-index: 99;
     }
 
     .nav-drawer ul {
