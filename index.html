@@ -900,6 +900,8 @@
           <span class="chip">Pandas</span>
           <span class="chip">Flask</span>
           <span class="chip">HTMX</span>
+          <span class="chip">Pydantic</span>
+          <span class="chip">BeautifulSoup4</span>
         </div>
       </div>
 
@@ -914,10 +916,13 @@
           <span class="chip">GitLab CI/CD</span>
           <span class="chip">SQL Server</span>
           <span class="chip">PostgreSQL</span>
+          <span class="chip">SQLite</span>
           <span class="chip">Windows Server</span>
           <span class="chip">Linux</span>
           <span class="chip">Artifactory</span>
           <span class="chip">Claude API</span>
+          <span class="chip">OpenAI API</span>
+          <span class="chip">Gemini API</span>
         </div>
       </div>
 
@@ -1019,8 +1024,9 @@
         <article class="project-card">
           <h3 class="project-name">Job Matcher</h3>
           <p class="project-desc">
-            A local job search pipeline that fetches listings from the Adzuna API, scores each one against a personal
-            skills profile using Claude AI, and surfaces ranked results in a browser-based feed with bookmark and
+            A multi-source job search pipeline that aggregates listings from 7 public APIs (Adzuna, RemoteOK,
+            Himalayas, and more), scores each posting against a personal skills profile using a pluggable LLM backend
+            (Claude, GPT-4, or Gemini), and presents ranked results in a Flask/HTMX web UI with bookmark and
             application tracking.
           </p>
           <div class="project-tags">
@@ -1028,7 +1034,8 @@
             <span class="project-tag">Flask</span>
             <span class="project-tag">SQLite</span>
             <span class="project-tag">HTMX</span>
-            <span class="project-tag">Anthropic API</span>
+            <span class="project-tag">Pydantic</span>
+            <span class="project-tag">Multi-LLM</span>
             <span class="project-tag">BeautifulSoup4</span>
           </div>
           <a href="https://github.com/cbeaulieu-gt/job-matcher-ui" class="project-link" target="_blank"
