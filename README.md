@@ -31,6 +31,30 @@ Then visit `http://localhost:8080`.
 
 ---
 
+## Development
+
+**Prerequisites:** [Node.js](https://nodejs.org/) (any LTS version)
+
+Install dev tools once after cloning:
+
+```bash
+npm install
+```
+
+Format `index.html` before committing:
+
+```bash
+npm run format
+```
+
+Verify formatting without writing changes (useful in CI):
+
+```bash
+npm run check
+```
+
+---
+
 ## Customizing
 
 If you want to use this as a template, search `index.html` for `<!-- CUSTOMIZE -->` comments. Each one marks a section with values you should replace — name, title, description, links, project entries, and so on.
