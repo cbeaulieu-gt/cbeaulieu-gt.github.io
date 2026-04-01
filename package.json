@@ -1,0 +1,12 @@
+{
+  "name": "github-profile-page",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write index.html",
+    "check": "prettier --check index.html"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
