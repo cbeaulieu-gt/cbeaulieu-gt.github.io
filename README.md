@@ -37,6 +37,12 @@ If you want to use this as a template, search `index.html` for `<!-- CUSTOMIZE -
 
 ---
 
+## Analytics
+
+GoatCounter is integrated for cookie-free, privacy-respecting page view tracking. The dashboard is at [cmbdev.goatcounter.com](https://cmbdev.goatcounter.com). No consent banner is required — GoatCounter does not use cookies or collect personal data.
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
