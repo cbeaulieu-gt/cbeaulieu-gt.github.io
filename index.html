@@ -499,6 +499,14 @@
       color: var(--text-muted);
     }
 
+    .visitor-bar {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+      opacity: 0.6;
+      letter-spacing: 0.02em;
+    }
+
     /* =====================================================
        NAVIGATION
     ===================================================== */
@@ -1138,6 +1146,7 @@
     <div class="container">
       <!-- CUSTOMIZE: Replace "Christopher M. Beaulieu" with your name if needed -->
       <p>&copy; <span id="year"></span> Christopher M. Beaulieu. Built and hosted on GitHub Pages.</p>
+      <p class="visitor-bar">visitors: <span class="goatcounter-count" data-path="/"></span></p>
     </div>
   </footer>
 
@@ -1256,6 +1265,10 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+
+  <!-- GoatCounter analytics — cookie-free, privacy-respecting page view tracking -->
+  <script data-goatcounter="https://cmbdev.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 
 </body>
 
