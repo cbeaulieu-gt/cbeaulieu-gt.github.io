@@ -505,6 +505,8 @@
       color: var(--text-muted);
       opacity: 0.6;
       letter-spacing: 0.02em;
+      /* Hidden by default; shown via JS once GoatCounter populates the count span */
+      display: none;
     }
 
     /* =====================================================
@@ -1269,6 +1271,30 @@
   <!-- GoatCounter analytics — cookie-free, privacy-respecting page view tracking -->
   <script data-goatcounter="https://cmbdev.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Show the visitor bar only when GoatCounter successfully populates the count span.
+       The bar is hidden by default (display:none in CSS) to avoid showing "visitors: "
+       with no number when the API is unreachable or the counter setting is disabled. -->
+  <script>
+    (function () {
+      var span = document.querySelector('.goatcounter-count');
+      var bar  = document.querySelector('.visitor-bar');
+      if (!span || !bar) return;
+
+      // GoatCounter's count.js sets textContent on the span after the window load
+      // event fires. Use a MutationObserver to detect that write and reveal the bar.
+      var observer = new MutationObserver(function () {
+        if (span.textContent.trim() !== '') {
+          bar.style.display = '';
+          observer.disconnect();
+        }
+      });
+      observer.observe(span, { childList: true, characterData: true, subtree: true });
+
+      // Safety: disconnect after 10 s so we never leave an orphaned observer.
+      setTimeout(function () { observer.disconnect(); }, 10000);
+    })();
+  </script>
 
 </body>
 
