@@ -1,1301 +1,1445 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CUSTOMIZE: Update this description for SEO / social sharing -->
+    <meta
+      name="description"
+      content="Christopher Beaulieu — Senior Software Engineer specializing in backend systems, data pipelines, and cloud infrastructure. Open to new opportunities."
+    />
+    <title>Christopher Beaulieu — Senior Software Engineer</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CUSTOMIZE: Update this description for SEO / social sharing -->
-  <meta name="description"
-    content="Christopher Beaulieu — Senior Software Engineer specializing in backend systems, data pipelines, and cloud infrastructure. Open to new opportunities." />
-  <title>Christopher Beaulieu — Senior Software Engineer</title>
+    <!-- Open Graph / Social sharing tags -->
+    <meta property="og:title" content="Christopher Beaulieu — Senior Software Engineer" />
+    <meta
+      property="og:description"
+      content="Christopher Beaulieu — Senior Software Engineer specializing in backend systems, data pipelines, and cloud infrastructure. Open to new opportunities."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cbeaulieu-gt.github.io" />
+    <meta property="og:image" content="https://cbeaulieu-gt.github.io/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Christopher Beaulieu — Senior Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Christopher Beaulieu — Senior Software Engineer specializing in backend systems, data pipelines, and cloud infrastructure. Open to new opportunities."
+    />
+    <meta name="twitter:image" content="https://cbeaulieu-gt.github.io/og-image.png" />
 
-  <!-- Open Graph / Social sharing tags -->
-  <meta property="og:title" content="Christopher Beaulieu — Senior Software Engineer" />
-  <meta property="og:description"
-    content="Christopher Beaulieu — Senior Software Engineer specializing in backend systems, data pipelines, and cloud infrastructure. Open to new opportunities." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cbeaulieu-gt.github.io" />
-  <meta property="og:image" content="https://cbeaulieu-gt.github.io/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Christopher Beaulieu — Senior Software Engineer" />
-  <meta name="twitter:description"
-    content="Christopher Beaulieu — Senior Software Engineer specializing in backend systems, data pipelines, and cloud infrastructure. Open to new opportunities." />
-  <meta name="twitter:image" content="https://cbeaulieu-gt.github.io/og-image.png" />
+    <link rel="canonical" href="https://cbeaulieu-gt.github.io" />
 
-  <link rel="canonical" href="https://cbeaulieu-gt.github.io" />
+    <!-- JSON-LD structured data: helps search engines understand this page as a Person entity -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Christopher Beaulieu",
+        "jobTitle": "Senior Software Engineer",
+        "url": "https://cbeaulieu-gt.github.io",
+        "sameAs": [
+          "https://github.com/cbeaulieu-gt",
+          "https://linkedin.com/in/christopher-beaulieu"
+        ],
+        "email": "christopher_m_beaulieu@outlook.com"
+      }
+    </script>
 
-  <!-- JSON-LD structured data: helps search engines understand this page as a Person entity -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Christopher Beaulieu",
-    "jobTitle": "Senior Software Engineer",
-    "url": "https://cbeaulieu-gt.github.io",
-    "sameAs": [
-      "https://github.com/cbeaulieu-gt",
-      "https://linkedin.com/in/christopher-beaulieu"
-    ],
-    "email": "christopher_m_beaulieu@outlook.com"
-  }
-  </script>
+    <!-- Inline SVG favicon — matches avatar style, no external file needed -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='48' fill='%231a1a1a'/%3E%3Ctext x='48' y='62' text-anchor='middle' font-family='-apple-system%2CBlinkMacSystemFont%2CSegoe UI%2CRoboto%2CArial%2Csans-serif' font-size='34' font-weight='700' fill='%233dd68c'%3ECB%3C/text%3E%3C/svg%3E"
+    />
 
-  <!-- Inline SVG favicon — matches avatar style, no external file needed -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='48' fill='%231a1a1a'/%3E%3Ctext x='48' y='62' text-anchor='middle' font-family='-apple-system%2CBlinkMacSystemFont%2CSegoe UI%2CRoboto%2CArial%2Csans-serif' font-size='34' font-weight='700' fill='%233dd68c'%3ECB%3C/text%3E%3C/svg%3E" />
-
-  <style>
-    /* =====================================================
+    <style>
+      /* =====================================================
        RESET & BASE
     ===================================================== */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --bg-base: #0d0d0d;
-      --bg-surface: #1a1a1a;
-      --bg-surface-alt: #222222;
-      --text-primary: #ffffff;
-      --text-body: #d4d4d4;
-      --text-muted: #888888;
-      --accent: #3dd68c;
-      --accent-dim: rgba(61, 214, 140, 0.12);
-      --accent-border: rgba(61, 214, 140, 0.35);
-      --border: rgba(255, 255, 255, 0.08);
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --transition: 150ms ease;
-      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-      --max-width: 860px;
-    }
+      :root {
+        --bg-base: #0d0d0d;
+        --bg-surface: #1a1a1a;
+        --bg-surface-alt: #222222;
+        --text-primary: #ffffff;
+        --text-body: #d4d4d4;
+        --text-muted: #888888;
+        --accent: #3dd68c;
+        --accent-dim: rgba(61, 214, 140, 0.12);
+        --accent-border: rgba(61, 214, 140, 0.35);
+        --border: rgba(255, 255, 255, 0.08);
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --transition: 150ms ease;
+        --font-stack:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        --max-width: 860px;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      font-family: var(--font-stack);
-      background-color: var(--bg-base);
-      color: var(--text-body);
-      line-height: 1.65;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        font-family: var(--font-stack);
+        background-color: var(--bg-base);
+        color: var(--text-body);
+        line-height: 1.65;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: opacity var(--transition);
-    }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity var(--transition);
+      }
 
-    a:hover {
-      opacity: 0.75;
-    }
+      a:hover {
+        opacity: 0.75;
+      }
 
-    /* =====================================================
+      /* =====================================================
        LAYOUT UTILITIES
     ===================================================== */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-    section {
-      padding: 72px 0;
-    }
+      section {
+        padding: 72px 0;
+      }
 
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
+      .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
 
-    .section-title {
-      font-size: clamp(22px, 4vw, 28px);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 32px;
-    }
+      .section-title {
+        font-size: clamp(22px, 4vw, 28px);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 32px;
+      }
 
-    hr.divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
+      hr.divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 0;
+      }
 
-    /* =====================================================
+      /* =====================================================
        HERO SECTION
     ===================================================== */
-    #hero {
-      padding: 96px 0 80px;
-      text-align: center;
-    }
-
-    .avatar-wrapper {
-      width: 128px;
-      height: 128px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid var(--accent-border);
-      margin: 0 auto 28px;
-    }
-
-    .avatar {
-      width: 100%;
-      height: 100%;
-      background-image: url('headshot.jpg');
-      background-size: 135%;
-      background-position: 15% 10%;
-      background-repeat: no-repeat;
-    }
-
-    /* CUSTOMIZE: Update "Your Name" below */
-    .hero-name {
-      font-size: clamp(32px, 7vw, 52px);
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-size: clamp(16px, 3vw, 20px);
-      font-weight: 400;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    /* CUSTOMIZE: Update this tagline */
-    .hero-tagline {
-      font-size: clamp(15px, 2.5vw, 17px);
-      color: var(--text-body);
-      max-width: 480px;
-      margin: 0 auto 24px;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-    }
-
-    .status-badge::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      background: var(--accent);
-      border-radius: 50%;
-      flex-shrink: 0;
-      /* Subtle pulse animation */
-      animation: pulse 2.5s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.35;
-      }
-    }
-
-    .hero-links {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .icon-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-muted);
-      font-size: 14px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface);
-      transition: color var(--transition), border-color var(--transition),
-        background var(--transition);
-    }
-
-    .icon-link:hover {
-      color: var(--text-primary);
-      border-color: rgba(255, 255, 255, 0.2);
-      background: var(--bg-surface-alt);
-      opacity: 1;
-    }
-
-    .icon-link svg {
-      flex-shrink: 0;
-    }
-
-    /* =====================================================
-       ABOUT SECTION
-    ===================================================== */
-    #about p {
-      font-size: 17px;
-      color: var(--text-body);
-      max-width: 640px;
-      line-height: 1.75;
-    }
-
-    #about p+p {
-      margin-top: 16px;
-    }
-
-    /* =====================================================
-       TECH STACK SECTION
-    ===================================================== */
-    .stack-group {
-      margin-bottom: 28px;
-    }
-
-    .stack-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .stack-group-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .chip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .chip {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-body);
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 5px 13px;
-    }
-
-    /* =====================================================
-       PROJECTS SECTION
-    ===================================================== */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color var(--transition), transform var(--transition),
-        box-shadow var(--transition);
-    }
-
-    .project-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-    }
-
-    .project-name {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .project-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      flex: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .project-tag {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      border-radius: 4px;
-      padding: 3px 8px;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-top: 4px;
-      transition: color var(--transition);
-    }
-
-    .project-link:hover {
-      color: var(--text-primary);
-      opacity: 1;
-    }
-
-    .project-link svg {
-      flex-shrink: 0;
-    }
-
-    /* =====================================================
-       RESUME SECTION
-    ===================================================== */
-    #resume {
-      text-align: center;
-      padding: 64px 0;
-    }
-
-    #resume p {
-      color: var(--text-muted);
-      max-width: 400px;
-      margin: 0 auto 20px;
-      font-size: 15px;
-    }
-
-    .resume-highlights {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 28px;
-      max-width: 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .resume-highlights li {
-      font-size: 14px;
-      color: var(--text-body);
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .resume-highlights li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 7px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    /* CUSTOMIZE: Update the href below to point to your actual resume PDF */
-    .btn-resume {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: var(--accent);
-      color: #0d0d0d;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 13px 28px;
-      border-radius: var(--radius-sm);
-      transition: opacity var(--transition), transform var(--transition);
-    }
-
-    .btn-resume:hover {
-      opacity: 0.88;
-      transform: translateY(-2px);
-    }
-
-    /* =====================================================
-       CONTACT / FOOTER
-    ===================================================== */
-    #contact {
-      text-align: center;
-      padding: 72px 0 56px;
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-headline {
-      font-size: clamp(22px, 4vw, 30px);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-
-    .contact-sub {
-      font-size: 15px;
-      color: var(--text-muted);
-      max-width: 380px;
-      margin: 0 auto 28px;
-    }
-
-    /* CUSTOMIZE: Replace the href with your actual email address */
-    .btn-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--accent);
-      font-size: 15px;
-      font-weight: 600;
-      padding: 11px 24px;
-      border: 1px solid var(--accent-border);
-      border-radius: var(--radius-sm);
-      background: var(--accent-dim);
-      transition: background var(--transition), border-color var(--transition),
-        transform var(--transition);
-    }
-
-    .btn-email:hover {
-      background: rgba(61, 214, 140, 0.2);
-      border-color: rgba(61, 214, 140, 0.6);
-      opacity: 1;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      padding: 20px 0 32px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .visitor-bar {
-      margin-top: 6px;
-      font-size: 11px;
-      color: var(--text-muted);
-      opacity: 0.6;
-      letter-spacing: 0.02em;
-      /* Hidden by default; shown via JS once GoatCounter populates the count span */
-      display: none;
-    }
-
-    /* =====================================================
-       NAVIGATION
-    ===================================================== */
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(13, 13, 13, 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .site-nav ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-      padding: 0 24px;
-      height: 44px;
-    }
-
-    .site-nav a {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--transition);
-      opacity: 1;
-    }
-
-    .site-nav a:hover {
-      color: var(--accent);
-      opacity: 1;
-    }
-
-    .nav-active {
-      color: var(--accent) !important;
-    }
-
-    /* ── Hamburger button (mobile only) ─────────────────── */
-    .nav-hamburger {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text-muted);
-      font-size: 20px;
-      line-height: 1;
-      margin-left: auto;
-      padding: 0;
-      flex-shrink: 0;
-    }
-
-    /* ── Drawer panel (mobile only) ─────────────────────── */
-    /* Drawer is a sibling of <nav>, not a child — this is intentional.
-       A child of a backdrop-filter element is trapped in its compositing layer
-       and cannot paint an opaque background over content below. As a sibling,
-       the drawer renders in its own layer with a fully solid background. */
-    .nav-drawer {
-      position: fixed;
-      top: 44px;
-      left: 0;
-      right: 0;
-      background: var(--bg-base);
-      border-bottom: 1px solid var(--border);
-      z-index: 99;
-    }
-
-    .nav-drawer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .nav-drawer li a {
-      display: flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 0 24px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--transition);
-      opacity: 1;
-      border-top: 1px solid var(--border);
-    }
-
-    .nav-drawer li a:hover {
-      color: var(--accent);
-      opacity: 1;
-    }
-
-    .nav-drawer li a.nav-active {
-      color: var(--accent) !important;
-    }
-
-    /* ── Open state ─────────────────────────────────────── */
-    .site-nav.nav-open .nav-hamburger {
-      color: var(--text-primary);
-    }
-
-    /* =====================================================
-       BACK TO TOP BUTTON
-    ===================================================== */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--text-muted);
-      font-size: 18px;
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 250ms ease, color var(--transition),
-        border-color var(--transition), transform var(--transition);
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .back-to-top:hover {
-      color: var(--accent);
-      border-color: var(--accent-border);
-      transform: translateY(-2px);
-    }
-
-    /* =====================================================
-       EXPERIENCE SECTION
-    ===================================================== */
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .experience-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 28px 32px;
-    }
-
-    .experience-header {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-bottom: 18px;
-    }
-
-    .experience-company {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .experience-role {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.3;
-    }
-
-    .experience-dates {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .experience-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .experience-bullets li {
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.65;
-      padding-left: 18px;
-      position: relative;
-    }
-
-    .experience-bullets li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
-    @media (max-width: 600px) {
-      section {
-        padding: 56px 0;
-      }
-
       #hero {
-        padding: 72px 0 56px;
+        padding: 96px 0 80px;
+        text-align: center;
       }
 
-      .site-nav > ul {
-        display: none;
+      .avatar-wrapper {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--accent-border);
+        margin: 0 auto 28px;
       }
 
-      .nav-hamburger {
-        display: flex;
+      .avatar {
+        width: 100%;
+        height: 100%;
+        background-image: url("headshot.jpg");
+        background-size: 135%;
+        background-position: 15% 10%;
+        background-repeat: no-repeat;
+      }
+
+      /* CUSTOMIZE: Update "Your Name" below */
+      .hero-name {
+        font-size: clamp(32px, 7vw, 52px);
+        font-weight: 800;
+        color: var(--text-primary);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+
+      .hero-title {
+        font-size: clamp(16px, 3vw, 20px);
+        font-weight: 400;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+
+      /* CUSTOMIZE: Update this tagline */
+      .hero-tagline {
+        font-size: clamp(15px, 2.5vw, 17px);
+        color: var(--text-body);
+        max-width: 480px;
+        margin: 0 auto 24px;
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 100px;
+        margin-bottom: 32px;
+      }
+
+      .status-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background: var(--accent);
+        border-radius: 50%;
+        flex-shrink: 0;
+        /* Subtle pulse animation */
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.35;
+        }
       }
 
       .hero-links {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .icon-link {
+        display: inline-flex;
         align-items: center;
+        gap: 8px;
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--bg-surface);
+        transition:
+          color var(--transition),
+          border-color var(--transition),
+          background var(--transition);
       }
 
+      .icon-link:hover {
+        color: var(--text-primary);
+        border-color: rgba(255, 255, 255, 0.2);
+        background: var(--bg-surface-alt);
+        opacity: 1;
+      }
+
+      .icon-link svg {
+        flex-shrink: 0;
+      }
+
+      /* =====================================================
+       ABOUT SECTION
+    ===================================================== */
+      #about p {
+        font-size: 17px;
+        color: var(--text-body);
+        max-width: 640px;
+        line-height: 1.75;
+      }
+
+      #about p + p {
+        margin-top: 16px;
+      }
+
+      /* =====================================================
+       TECH STACK SECTION
+    ===================================================== */
+      .stack-group {
+        margin-bottom: 28px;
+      }
+
+      .stack-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .stack-group-label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+      }
+
+      .chip-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+
+      .chip {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-body);
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 5px 13px;
+      }
+
+      /* =====================================================
+       PROJECTS SECTION
+    ===================================================== */
       .projects-grid {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
       }
 
+      .project-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition:
+          border-color var(--transition),
+          transform var(--transition),
+          box-shadow var(--transition);
+      }
+
+      .project-card:hover {
+        border-color: rgba(255, 255, 255, 0.18);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+      }
+
+      .project-name {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .project-desc {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        flex: 1;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .project-tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        border-radius: 4px;
+        padding: 3px 8px;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-top: 4px;
+        transition: color var(--transition);
+      }
+
+      .project-link:hover {
+        color: var(--text-primary);
+        opacity: 1;
+      }
+
+      .project-link svg {
+        flex-shrink: 0;
+      }
+
+      /* =====================================================
+       RESUME SECTION
+    ===================================================== */
       #resume {
-        padding: 48px 0;
+        text-align: center;
+        padding: 64px 0;
       }
-    }
-  </style>
-</head>
 
-<body>
+      #resume p {
+        color: var(--text-muted);
+        max-width: 400px;
+        margin: 0 auto 20px;
+        font-size: 15px;
+      }
 
-  <!-- =====================================================
+      .resume-highlights {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto 28px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .resume-highlights li {
+        font-size: 14px;
+        color: var(--text-body);
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .resume-highlights li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      /* CUSTOMIZE: Update the href below to point to your actual resume PDF */
+      .btn-resume {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: var(--accent);
+        color: #0d0d0d;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 13px 28px;
+        border-radius: var(--radius-sm);
+        transition:
+          opacity var(--transition),
+          transform var(--transition);
+      }
+
+      .btn-resume:hover {
+        opacity: 0.88;
+        transform: translateY(-2px);
+      }
+
+      /* =====================================================
+       CONTACT / FOOTER
+    ===================================================== */
+      #contact {
+        text-align: center;
+        padding: 72px 0 56px;
+        border-top: 1px solid var(--border);
+      }
+
+      .contact-headline {
+        font-size: clamp(22px, 4vw, 30px);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+      }
+
+      .contact-sub {
+        font-size: 15px;
+        color: var(--text-muted);
+        max-width: 380px;
+        margin: 0 auto 28px;
+      }
+
+      /* CUSTOMIZE: Replace the href with your actual email address */
+      .btn-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--accent);
+        font-size: 15px;
+        font-weight: 600;
+        padding: 11px 24px;
+        border: 1px solid var(--accent-border);
+        border-radius: var(--radius-sm);
+        background: var(--accent-dim);
+        transition:
+          background var(--transition),
+          border-color var(--transition),
+          transform var(--transition);
+      }
+
+      .btn-email:hover {
+        background: rgba(61, 214, 140, 0.2);
+        border-color: rgba(61, 214, 140, 0.6);
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+
+      footer {
+        padding: 20px 0 32px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      .visitor-bar {
+        margin-top: 6px;
+        font-size: 11px;
+        color: var(--text-muted);
+        opacity: 0.6;
+        letter-spacing: 0.02em;
+        /* Hidden by default; shown via JS once GoatCounter populates the count span */
+        display: none;
+      }
+
+      /* =====================================================
+       NAVIGATION
+    ===================================================== */
+      .site-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(13, 13, 13, 0.82);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .site-nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+        padding: 0 24px;
+        height: 44px;
+      }
+
+      .site-nav a {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color var(--transition);
+        opacity: 1;
+      }
+
+      .site-nav a:hover {
+        color: var(--accent);
+        opacity: 1;
+      }
+
+      .nav-active {
+        color: var(--accent) !important;
+      }
+
+      /* ── Hamburger button (mobile only) ─────────────────── */
+      .nav-hamburger {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-muted);
+        font-size: 20px;
+        line-height: 1;
+        margin-left: auto;
+        padding: 0;
+        flex-shrink: 0;
+      }
+
+      /* ── Drawer panel (mobile only) ─────────────────────── */
+      /* Drawer is a sibling of <nav>, not a child — this is intentional.
+       A child of a backdrop-filter element is trapped in its compositing layer
+       and cannot paint an opaque background over content below. As a sibling,
+       the drawer renders in its own layer with a fully solid background. */
+      .nav-drawer {
+        position: fixed;
+        top: 44px;
+        left: 0;
+        right: 0;
+        background: var(--bg-base);
+        border-bottom: 1px solid var(--border);
+        z-index: 99;
+      }
+
+      .nav-drawer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-drawer li a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 24px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color var(--transition);
+        opacity: 1;
+        border-top: 1px solid var(--border);
+      }
+
+      .nav-drawer li a:hover {
+        color: var(--accent);
+        opacity: 1;
+      }
+
+      .nav-drawer li a.nav-active {
+        color: var(--accent) !important;
+      }
+
+      /* ── Open state ─────────────────────────────────────── */
+      .site-nav.nav-open .nav-hamburger {
+        color: var(--text-primary);
+      }
+
+      /* =====================================================
+       BACK TO TOP BUTTON
+    ===================================================== */
+      .back-to-top {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        color: var(--text-muted);
+        font-size: 18px;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 250ms ease,
+          color var(--transition),
+          border-color var(--transition),
+          transform var(--transition);
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .back-to-top:hover {
+        color: var(--accent);
+        border-color: var(--accent-border);
+        transform: translateY(-2px);
+      }
+
+      /* =====================================================
+       EXPERIENCE SECTION
+    ===================================================== */
+      .experience-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .experience-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 28px 32px;
+      }
+
+      .experience-header {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 18px;
+      }
+
+      .experience-company {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .experience-role {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.3;
+      }
+
+      .experience-dates {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      .experience-bullets {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .experience-bullets li {
+        font-size: 14px;
+        color: var(--text-body);
+        line-height: 1.65;
+        padding-left: 18px;
+        position: relative;
+      }
+
+      .experience-bullets li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+      @media (max-width: 600px) {
+        section {
+          padding: 56px 0;
+        }
+
+        #hero {
+          padding: 72px 0 56px;
+        }
+
+        .site-nav > ul {
+          display: none;
+        }
+
+        .nav-hamburger {
+          display: flex;
+        }
+
+        .hero-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        #resume {
+          padding: 48px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
        STICKY NAVIGATION BAR
   ====================================================== -->
-  <nav class="site-nav" aria-label="Site navigation">
-    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#stack">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <!-- Drawer is a sibling of nav (not a child) so it renders outside the
+    <nav class="site-nav" aria-label="Site navigation">
+      <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        &#9776;
+      </button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Drawer is a sibling of nav (not a child) so it renders outside the
        nav's backdrop-filter compositing layer and gets a truly opaque background -->
-  <div class="nav-drawer" hidden>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#stack">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+    <div class="nav-drawer" hidden>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
 
-  <!-- =====================================================
+    <!-- =====================================================
        HERO SECTION
        CUSTOMIZE: name, tagline, GitHub href, LinkedIn href
   ====================================================== -->
-  <section id="hero">
-    <div class="container">
+    <section id="hero">
+      <div class="container">
+        <div class="avatar-wrapper">
+          <div class="avatar" role="img" aria-label="Christopher Beaulieu"></div>
+        </div>
 
-      <div class="avatar-wrapper">
-        <div class="avatar" role="img" aria-label="Christopher Beaulieu"></div>
-      </div>
+        <!-- CUSTOMIZE: Replace "Christopher Beaulieu" if needed -->
+        <h1 class="hero-name">Christopher Beaulieu</h1>
+        <p class="hero-title">Senior Software Engineer</p>
 
-      <!-- CUSTOMIZE: Replace "Christopher Beaulieu" if needed -->
-      <h1 class="hero-name">Christopher Beaulieu</h1>
-      <p class="hero-title">Senior Software Engineer</p>
+        <p class="hero-tagline">
+          7 years building production analytics platforms, ML-enabled pipelines, and GenAI developer
+          tools at enterprise scale.
+        </p>
 
-      <p class="hero-tagline">7 years building production analytics platforms, ML-enabled pipelines, and GenAI developer
-        tools at enterprise scale.</p>
+        <div class="status-badge">Open to opportunities</div>
 
-      <div class="status-badge">Open to opportunities</div>
-
-      <nav class="hero-links" aria-label="Social links">
-
-        <!-- CUSTOMIZE: Replace href with your GitHub profile URL -->
-        <a href="https://github.com/cbeaulieu-gt" class="icon-link" target="_blank" rel="noopener noreferrer"
-          aria-label="GitHub profile">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+        <nav class="hero-links" aria-label="Social links">
+          <!-- CUSTOMIZE: Replace href with your GitHub profile URL -->
+          <a
+            href="https://github.com/cbeaulieu-gt"
+            class="icon-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
               0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755
               -1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305
               3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38
               1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405
               11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84
               1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015
-              2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-          </svg>
-          GitHub
-        </a>
+              2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+            GitHub
+          </a>
 
-        <!-- CUSTOMIZE: Replace href with your LinkedIn profile URL -->
-        <a href="https://linkedin.com/in/christopher-beaulieu" class="icon-link" target="_blank"
-          rel="noopener noreferrer" aria-label="LinkedIn profile">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136
+          <!-- CUSTOMIZE: Replace href with your LinkedIn profile URL -->
+          <a
+            href="https://linkedin.com/in/christopher-beaulieu"
+            class="icon-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136
               1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85
               3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065
               2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771
               C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227
-              24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-          LinkedIn
-        </a>
+              24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+            LinkedIn
+          </a>
+        </nav>
+      </div>
+    </section>
 
-      </nav>
-    </div>
-  </section>
+    <hr class="divider" />
 
-  <hr class="divider" />
-
-  <!-- =====================================================
+    <!-- =====================================================
        ABOUT SECTION
        CUSTOMIZE: Replace this paragraph with your own bio
   ====================================================== -->
-  <section id="about">
-    <div class="container">
-      <p class="section-label">About</p>
-      <h2 class="section-title">A bit about me</h2>
-      <p>
-        I'm a Senior Software Engineer with 7+ years of experience designing and operating scalable backend, data,
-        and analytics systems in enterprise production environments. At Intel, I shipped platforms spanning
-        production analytics services, ML-enabled data pipelines, GenAI-powered developer tooling, and CI/CD
-        automation — with measurable outcomes attached to each.
-      </p>
-      <p>
-        I hold an M.S. in Computer Engineering from Georgia Tech. My core background is in C# and Python, though
-        I'm comfortable across the full stack of a modern backend system, from distributed services to cloud
-        infrastructure.
-      </p>
-      <p>
-        I'm currently open to new opportunities and would love to connect if you're building something ambitious.
-      </p>
-    </div>
-  </section>
+    <section id="about">
+      <div class="container">
+        <p class="section-label">About</p>
+        <h2 class="section-title">A bit about me</h2>
+        <p>
+          I'm a Senior Software Engineer with 7+ years of experience designing and operating
+          scalable backend, data, and analytics systems in enterprise production environments. At
+          Intel, I shipped platforms spanning production analytics services, ML-enabled data
+          pipelines, GenAI-powered developer tooling, and CI/CD automation — with measurable
+          outcomes attached to each.
+        </p>
+        <p>
+          I hold an M.S. in Computer Engineering from Georgia Tech. My core background is in C# and
+          Python, though I'm comfortable across the full stack of a modern backend system, from
+          distributed services to cloud infrastructure.
+        </p>
+        <p>
+          I'm currently open to new opportunities and would love to connect if you're building
+          something ambitious.
+        </p>
+      </div>
+    </section>
 
-  <hr class="divider" />
+    <hr class="divider" />
 
-  <!-- =====================================================
+    <!-- =====================================================
        TECH STACK SECTION
        CUSTOMIZE: Add/remove skills to match your actual stack
   ====================================================== -->
-  <section id="stack">
-    <div class="container">
-      <p class="section-label">Skills</p>
-      <h2 class="section-title">Tech stack</h2>
+    <section id="stack">
+      <div class="container">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Tech stack</h2>
 
-      <!-- CUSTOMIZE: Update languages to match your own -->
-      <div class="stack-group">
-        <p class="stack-group-label">Languages</p>
-        <div class="chip-grid">
-          <span class="chip">C#</span>
-          <span class="chip">Python</span>
-          <span class="chip">C++</span>
-          <span class="chip">SQL</span>
+        <!-- CUSTOMIZE: Update languages to match your own -->
+        <div class="stack-group">
+          <p class="stack-group-label">Languages</p>
+          <div class="chip-grid">
+            <span class="chip">C#</span>
+            <span class="chip">Python</span>
+            <span class="chip">C++</span>
+            <span class="chip">SQL</span>
+          </div>
+        </div>
+
+        <!-- CUSTOMIZE: Update frameworks/libraries to match your own -->
+        <div class="stack-group">
+          <p class="stack-group-label">Frameworks &amp; Backend</p>
+          <div class="chip-grid">
+            <span class="chip">.NET Framework</span>
+            <span class="chip">.NET Core</span>
+            <span class="chip">ASP.NET</span>
+            <span class="chip">RESTful APIs</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Flask</span>
+            <span class="chip">HTMX</span>
+            <span class="chip">Pydantic</span>
+            <span class="chip">BeautifulSoup4</span>
+          </div>
+        </div>
+
+        <!-- CUSTOMIZE: Update tools/platforms to match your own -->
+        <div class="stack-group">
+          <p class="stack-group-label">Tools &amp; Platforms</p>
+          <div class="chip-grid">
+            <span class="chip">Microsoft Azure</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Git</span>
+            <span class="chip">GitHub CI/CD</span>
+            <span class="chip">GitLab CI/CD</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQLite</span>
+            <span class="chip">Windows Server</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Artifactory</span>
+            <span class="chip">Claude API</span>
+            <span class="chip">OpenAI API</span>
+            <span class="chip">Gemini API</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- CUSTOMIZE: Update frameworks/libraries to match your own -->
-      <div class="stack-group">
-        <p class="stack-group-label">Frameworks &amp; Backend</p>
-        <div class="chip-grid">
-          <span class="chip">.NET Framework</span>
-          <span class="chip">.NET Core</span>
-          <span class="chip">ASP.NET</span>
-          <span class="chip">RESTful APIs</span>
-          <span class="chip">NumPy</span>
-          <span class="chip">Pandas</span>
-          <span class="chip">Flask</span>
-          <span class="chip">HTMX</span>
-          <span class="chip">Pydantic</span>
-          <span class="chip">BeautifulSoup4</span>
-        </div>
-      </div>
+    <hr class="divider" />
 
-      <!-- CUSTOMIZE: Update tools/platforms to match your own -->
-      <div class="stack-group">
-        <p class="stack-group-label">Tools &amp; Platforms</p>
-        <div class="chip-grid">
-          <span class="chip">Microsoft Azure</span>
-          <span class="chip">Docker</span>
-          <span class="chip">Git</span>
-          <span class="chip">GitHub CI/CD</span>
-          <span class="chip">GitLab CI/CD</span>
-          <span class="chip">SQL Server</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">SQLite</span>
-          <span class="chip">Windows Server</span>
-          <span class="chip">Linux</span>
-          <span class="chip">Artifactory</span>
-          <span class="chip">Claude API</span>
-          <span class="chip">OpenAI API</span>
-          <span class="chip">Gemini API</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- =====================================================
+    <!-- =====================================================
        EXPERIENCE SECTION
   ====================================================== -->
-  <section id="experience">
-    <div class="container">
-      <p class="section-label">Experience</p>
-      <h2 class="section-title">Work history</h2>
+    <section id="experience">
+      <div class="container">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Work history</h2>
 
-      <div class="experience-list">
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-header">
+              <span class="experience-company">Intel</span>
+              <span class="experience-role">Senior Data Analytics Software Engineer</span>
+              <span class="experience-dates">Mar 2020 – 2025</span>
+            </div>
+            <ul class="experience-bullets">
+              <li>
+                Led a team of engineers to build a production analytics platform, significantly
+                improving signal identification and data workflows
+              </li>
+              <li>
+                Designed and operated large-scale ML-enabled data pipelines, including feature
+                engineering and production model integration
+              </li>
+              <li>
+                Built an internal GenAI-powered developer assistance platform using RAG and LLMs,
+                meaningfully improving code discovery and developer productivity
+              </li>
+              <li>
+                Owned CI/CD and deployment strategy across multiple applications, substantially
+                reducing deployment time and production defect rates
+              </li>
+              <li>
+                Integrated SCRUM practices into team workflows and mentored junior engineers on
+                development best practices
+              </li>
+            </ul>
+          </article>
 
-        <article class="experience-card">
-          <div class="experience-header">
-            <span class="experience-company">Intel</span>
-            <span class="experience-role">Senior Data Analytics Software Engineer</span>
-            <span class="experience-dates">Mar 2020 – 2025</span>
-          </div>
-          <ul class="experience-bullets">
-            <li>Led a team of engineers to build a production analytics platform, significantly improving signal
-              identification and data workflows</li>
-            <li>Designed and operated large-scale ML-enabled data pipelines, including feature engineering and
-              production model integration</li>
-            <li>Built an internal GenAI-powered developer assistance platform using RAG and LLMs, meaningfully improving
-              code discovery and developer productivity</li>
-            <li>Owned CI/CD and deployment strategy across multiple applications, substantially reducing deployment time
-              and production defect rates</li>
-            <li>Integrated SCRUM practices into team workflows and mentored junior engineers on development best
-              practices</li>
-          </ul>
-        </article>
-
-        <article class="experience-card">
-          <div class="experience-header">
-            <span class="experience-company">Intel</span>
-            <span class="experience-role">Software Engineer</span>
-            <span class="experience-dates">May 2018 – Mar 2020</span>
-          </div>
-          <ul class="experience-bullets">
-            <li>Developed analytics and statistical analysis applications supporting reliability modeling and
-              failure-rate analysis</li>
-            <li>Improved analytical algorithms, achieving significant performance gains and reduced defect rates</li>
-            <li>Designed reusable application frameworks for backend data services and implemented CI/CD automation</li>
-          </ul>
-        </article>
-
+          <article class="experience-card">
+            <div class="experience-header">
+              <span class="experience-company">Intel</span>
+              <span class="experience-role">Software Engineer</span>
+              <span class="experience-dates">May 2018 – Mar 2020</span>
+            </div>
+            <ul class="experience-bullets">
+              <li>
+                Developed analytics and statistical analysis applications supporting reliability
+                modeling and failure-rate analysis
+              </li>
+              <li>
+                Improved analytical algorithms, achieving significant performance gains and reduced
+                defect rates
+              </li>
+              <li>
+                Designed reusable application frameworks for backend data services and implemented
+                CI/CD automation
+              </li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="divider" />
+    <hr class="divider" />
 
-  <!-- =====================================================
+    <!-- =====================================================
        FEATURED PROJECTS SECTION
        CUSTOMIZE: Replace with your actual projects (name, desc, tags, link)
   ====================================================== -->
-  <section id="projects">
-    <div class="container">
-      <p class="section-label">Work</p>
-      <h2 class="section-title">Featured projects</h2>
+    <section id="projects">
+      <div class="container">
+        <p class="section-label">Work</p>
+        <h2 class="section-title">Featured projects</h2>
 
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <h3 class="project-name">Siege Assignment Web App</h3>
-          <p class="project-desc">
-            A full-stack web app that streamlines Raid Shadow Legends clan siege assignments,
-            replacing manual Discord and Excel workflows with a unified database-backed interface.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">FastAPI</span>
-            <span class="project-tag">React</span>
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">Docker</span>
-          </div>
-          <a href="https://github.com/cbeaulieu-gt/siege-web" class="project-link" target="_blank"
-            rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3 class="project-name">Siege Assignment Web App</h3>
+            <p class="project-desc">
+              A full-stack web app that streamlines Raid Shadow Legends clan siege assignments,
+              replacing manual Discord and Excel workflows with a unified database-backed interface.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">Docker</span>
+            </div>
+            <a
+              href="https://github.com/cbeaulieu-gt/siege-web"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
                 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755
                 -1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305
                 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38
                 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405
                 11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84
                 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015
-                2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-            View on GitHub
-          </a>
-        </article>
+                2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+              View on GitHub
+            </a>
+          </article>
 
-        <article class="project-card">
-          <h3 class="project-name">Job Matcher</h3>
-          <p class="project-desc">
-            A multi-source job search pipeline that aggregates listings from 7 public APIs (Adzuna, RemoteOK,
-            Himalayas, and more), scores each posting against a personal skills profile using a pluggable LLM backend
-            (Claude, GPT-4, or Gemini), and presents ranked results in a Flask/HTMX web UI with bookmark and
-            application tracking.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Flask</span>
-            <span class="project-tag">SQLite</span>
-            <span class="project-tag">HTMX</span>
-            <span class="project-tag">Pydantic</span>
-            <span class="project-tag">Multi-LLM</span>
-            <span class="project-tag">BeautifulSoup4</span>
-          </div>
-          <a href="https://github.com/cbeaulieu-gt/job-matcher-ui" class="project-link" target="_blank"
-            rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+          <article class="project-card">
+            <h3 class="project-name">Job Matcher</h3>
+            <p class="project-desc">
+              An LLM-powered job search pipeline that fetches listings from 9 sources, scores each
+              full job description against your skills profile using Claude, GPT-4, or Gemini, and
+              surfaces ranked results in a local web UI. Built with a focus on provider failover,
+              cost-per-call awareness, and keeping your data off third-party servers.
+            </p>
+            <p
+              style="font-size: 12px; color: var(--text-muted); margin-top: 6px; font-style: italic"
+            >
+              Solo project with one external contribution — a DB query optimization accepted from a
+              community fork. Built with Claude as a development accelerator.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">SQLite</span>
+              <span class="project-tag">HTMX</span>
+              <span class="project-tag">Pydantic</span>
+              <span class="project-tag">Multi-LLM</span>
+              <span class="project-tag">BeautifulSoup4</span>
+            </div>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap">
+              <a
+                href="https://github.com/cbeaulieu-gt/job-matcher"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+                  0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755
+                  -1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305
+                  3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38
+                  1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405
+                  11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84
+                  1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015
+                  2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+                View on GitHub
+              </a>
+              <a
+                href="https://christopherbeaulieu.net/job-matcher/"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93V18a1 1 0 0 1 2 0v1.93A8.001 8.001 0 0 1 4.07 13H6a1 1 0 0 1 0 2H4.07A8.001 8.001 0 0 1 11 19.93zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"
+                  />
+                </svg>
+                Landing Page
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-name">More on GitHub</h3>
+            <p class="project-desc">
+              Browse the rest of my public repositories — side projects, experiments, and
+              open-source contributions.
+            </p>
+            <a
+              href="https://github.com/cbeaulieu-gt"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
                 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755
                 -1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305
                 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38
                 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405
                 11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84
                 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015
-                2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-            View on GitHub
-          </a>
-        </article>
-
-        <article class="project-card">
-          <h3 class="project-name">More on GitHub</h3>
-          <p class="project-desc">
-            Browse the rest of my public repositories — side projects, experiments, and open-source contributions.
-          </p>
-          <a href="https://github.com/cbeaulieu-gt" class="project-link" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
-                0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755
-                -1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305
-                3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38
-                1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405
-                11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84
-                1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015
-                2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-            View GitHub Profile
-          </a>
-        </article>
-
+                2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+              View GitHub Profile
+            </a>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="divider" />
+    <hr class="divider" />
 
-  <!-- =====================================================
+    <!-- =====================================================
        RESUME SECTION
        CUSTOMIZE: Replace href with your resume PDF URL (e.g., /resume.pdf)
   ====================================================== -->
-  <section id="resume">
-    <div class="container">
-      <p class="section-label">Resume</p>
-      <h2 class="section-title" style="margin-bottom: 8px;">Want the full picture?</h2>
-      <p>Download my resume for a complete look at my experience, education, and skills.</p>
-      <ul class="resume-highlights">
-        <li>7+ years of enterprise software engineering experience</li>
-        <li>M.S. Computer Engineering — Georgia Institute of Technology</li>
-        <li>Full-stack backend expertise: distributed systems, ML pipelines, cloud infrastructure</li>
-      </ul>
-      <!-- CUSTOMIZE: Update href to your resume file, e.g., href="resume.pdf" -->
-      <a href="resume.pdf" class="btn-resume" download>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-          <polyline points="7 10 12 15 17 10" />
-          <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
-        Download Resume
-      </a>
-    </div>
-  </section>
+    <section id="resume">
+      <div class="container">
+        <p class="section-label">Resume</p>
+        <h2 class="section-title" style="margin-bottom: 8px">Want the full picture?</h2>
+        <p>Download my resume for a complete look at my experience, education, and skills.</p>
+        <ul class="resume-highlights">
+          <li>7+ years of enterprise software engineering experience</li>
+          <li>M.S. Computer Engineering — Georgia Institute of Technology</li>
+          <li>
+            Full-stack backend expertise: distributed systems, ML pipelines, cloud infrastructure
+          </li>
+        </ul>
+        <!-- CUSTOMIZE: Update href to your resume file, e.g., href="resume.pdf" -->
+        <a href="resume.pdf" class="btn-resume" download>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download Resume
+        </a>
+      </div>
+    </section>
 
-  <!-- =====================================================
+    <!-- =====================================================
        CONTACT / FOOTER SECTION
        CUSTOMIZE: Replace the email href with your actual email address
   ====================================================== -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="contact-headline">Get in touch</h2>
-      <!-- CUSTOMIZE: Update this sub-copy if you like -->
-      <p class="contact-sub">
-        I'm always open to interesting conversations and new opportunities.
-        My inbox is open.
-      </p>
-      <!-- CUSTOMIZE: Replace with your actual email if it changes -->
-      <a href="mailto:christopher_m_beaulieu@outlook.com" class="btn-email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-          <polyline points="22,6 12,13 2,6" />
-        </svg>
-        christopher_m_beaulieu@outlook.com
-      </a>
-    </div>
-  </section>
+    <section id="contact">
+      <div class="container">
+        <h2 class="contact-headline">Get in touch</h2>
+        <!-- CUSTOMIZE: Update this sub-copy if you like -->
+        <p class="contact-sub">
+          I'm always open to interesting conversations and new opportunities. My inbox is open.
+        </p>
+        <!-- CUSTOMIZE: Replace with your actual email if it changes -->
+        <a href="mailto:christopher_m_beaulieu@outlook.com" class="btn-email">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          christopher_m_beaulieu@outlook.com
+        </a>
+      </div>
+    </section>
 
-  <!-- Back to top button: fixed position, shown via JS after 400px scroll -->
-  <button class="back-to-top" aria-label="Back to top" id="backToTop">&#8593;</button>
+    <!-- Back to top button: fixed position, shown via JS after 400px scroll -->
+    <button class="back-to-top" aria-label="Back to top" id="backToTop">&#8593;</button>
 
-  <footer>
-    <div class="container">
-      <!-- CUSTOMIZE: Replace "Christopher Beaulieu" with your name if needed -->
-      <p>&copy; <span id="year"></span> Christopher Beaulieu. Built and hosted on GitHub Pages.</p>
-      <p class="visitor-bar">visitors: <span class="goatcounter-count" data-path="/"></span></p>
-    </div>
-  </footer>
+    <footer>
+      <div class="container">
+        <!-- CUSTOMIZE: Replace "Christopher Beaulieu" with your name if needed -->
+        <p>
+          &copy; <span id="year"></span> Christopher Beaulieu. Built and hosted on GitHub Pages.
+        </p>
+        <p class="visitor-bar">visitors: <span class="goatcounter-count" data-path="/"></span></p>
+      </div>
+    </footer>
 
-  <script>
-    // Copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <script>
+      // Copyright year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ── Hamburger / drawer ────────────────────────────────────────────────────
-    const siteNav = document.querySelector('.site-nav');
-    const hamburger = document.querySelector('.nav-hamburger');
-    const drawer = document.querySelector('.nav-drawer');
+      // ── Hamburger / drawer ────────────────────────────────────────────────────
+      const siteNav = document.querySelector(".site-nav");
+      const hamburger = document.querySelector(".nav-hamburger");
+      const drawer = document.querySelector(".nav-drawer");
 
-    function openDrawer() {
-      siteNav.classList.add('nav-open');
-      drawer.removeAttribute('hidden');
-      hamburger.setAttribute('aria-expanded', 'true');
-      hamburger.innerHTML = '&#10005;';
-    }
-
-    function closeDrawer() {
-      siteNav.classList.remove('nav-open');
-      drawer.setAttribute('hidden', '');
-      hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.innerHTML = '&#9776;';
-    }
-
-    hamburger.addEventListener('click', () => {
-      siteNav.classList.contains('nav-open') ? closeDrawer() : openDrawer();
-    });
-
-    // Close when a drawer link is tapped
-    drawer.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && siteNav.classList.contains('nav-open')) {
-        closeDrawer();
+      function openDrawer() {
+        siteNav.classList.add("nav-open");
+        drawer.removeAttribute("hidden");
+        hamburger.setAttribute("aria-expanded", "true");
+        hamburger.innerHTML = "&#10005;";
       }
-    });
 
-    // Close when clicking outside the nav
-    document.addEventListener('click', (e) => {
-      if (siteNav.classList.contains('nav-open') && !siteNav.contains(e.target)) {
-        closeDrawer();
+      function closeDrawer() {
+        siteNav.classList.remove("nav-open");
+        drawer.setAttribute("hidden", "");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.innerHTML = "&#9776;";
       }
-    });
 
-    // ── Scroll spy: highlight the nav link for whichever section is in view ──
-    // Uses a Set to track all currently-intersecting sections, then picks the
-    // topmost one so only a single link is ever highlighted at a time.
-    const navLinks = document.querySelectorAll('.site-nav a[href^="#"], .nav-drawer a[href^="#"]');
-    const intersectingSections = new Set();
+      hamburger.addEventListener("click", () => {
+        siteNav.classList.contains("nav-open") ? closeDrawer() : openDrawer();
+      });
 
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            intersectingSections.add(entry.target.id);
-          } else {
-            intersectingSections.delete(entry.target.id);
-          }
-        });
+      // Close when a drawer link is tapped
+      drawer.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeDrawer);
+      });
 
-        // Pick the topmost visible section: smallest non-negative top, falling
-        // back to smallest absolute value when every section top is negative.
-        let activeId = null;
-        let bestTop = Infinity;
-        let bestAbsTop = Infinity;
-
-        intersectingSections.forEach((id) => {
-          const el = document.getElementById(id);
-          if (!el) return;
-          const top = el.getBoundingClientRect().top;
-          if (top >= 0 && top < bestTop) {
-            bestTop = top;
-            activeId = id;
-          } else if (activeId === null && Math.abs(top) < bestAbsTop) {
-            bestAbsTop = Math.abs(top);
-            activeId = id;
-          }
-        });
-
-        navLinks.forEach((link) => link.classList.remove('nav-active'));
-        if (activeId) {
-          document.querySelectorAll(
-            `.site-nav a[href="#${activeId}"], .nav-drawer a[href="#${activeId}"]`
-          ).forEach((link) => link.classList.add('nav-active'));
-        }
-      },
-      { rootMargin: '-20% 0px -75% 0px', threshold: 0 }
-    );
-
-    document.querySelectorAll('section[id]').forEach((section) => {
-      sectionObserver.observe(section);
-    });
-
-    // Blur nav links after click to clear browser focus ring
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => link.blur());
-    });
-
-    // ── Back to top button ────────────────────────────────────────────────────
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
-    }, { passive: true });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-
-  <!-- GoatCounter analytics — cookie-free, privacy-respecting page view tracking -->
-  <script data-goatcounter="https://cmbdev.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
-
-  <!-- Show the visitor bar only when GoatCounter successfully populates the count span.
-       The bar is hidden by default (display:none in CSS) to avoid showing "visitors: "
-       with no number when the API is unreachable or the counter setting is disabled. -->
-  <script>
-    (function () {
-      var span = document.querySelector('.goatcounter-count');
-      var bar  = document.querySelector('.visitor-bar');
-      if (!span || !bar) return;
-
-      // GoatCounter's count.js sets textContent on the span after the window load
-      // event fires. Use a MutationObserver to detect that write and reveal the bar.
-      var observer = new MutationObserver(function () {
-        if (span.textContent.trim() !== '') {
-          bar.style.display = '';
-          observer.disconnect();
+      // Close on Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && siteNav.classList.contains("nav-open")) {
+          closeDrawer();
         }
       });
-      observer.observe(span, { childList: true, characterData: true, subtree: true });
 
-      // Safety: disconnect after 10 s so we never leave an orphaned observer.
-      setTimeout(function () { observer.disconnect(); }, 10000);
-    })();
-  </script>
+      // Close when clicking outside the nav
+      document.addEventListener("click", (e) => {
+        if (siteNav.classList.contains("nav-open") && !siteNav.contains(e.target)) {
+          closeDrawer();
+        }
+      });
 
-</body>
+      // ── Scroll spy: highlight the nav link for whichever section is in view ──
+      // Uses a Set to track all currently-intersecting sections, then picks the
+      // topmost one so only a single link is ever highlighted at a time.
+      const navLinks = document.querySelectorAll(
+        '.site-nav a[href^="#"], .nav-drawer a[href^="#"]',
+      );
+      const intersectingSections = new Set();
 
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              intersectingSections.add(entry.target.id);
+            } else {
+              intersectingSections.delete(entry.target.id);
+            }
+          });
+
+          // Pick the topmost visible section: smallest non-negative top, falling
+          // back to smallest absolute value when every section top is negative.
+          let activeId = null;
+          let bestTop = Infinity;
+          let bestAbsTop = Infinity;
+
+          intersectingSections.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top;
+            if (top >= 0 && top < bestTop) {
+              bestTop = top;
+              activeId = id;
+            } else if (activeId === null && Math.abs(top) < bestAbsTop) {
+              bestAbsTop = Math.abs(top);
+              activeId = id;
+            }
+          });
+
+          navLinks.forEach((link) => link.classList.remove("nav-active"));
+          if (activeId) {
+            document
+              .querySelectorAll(
+                `.site-nav a[href="#${activeId}"], .nav-drawer a[href="#${activeId}"]`,
+              )
+              .forEach((link) => link.classList.add("nav-active"));
+          }
+        },
+        { rootMargin: "-20% 0px -75% 0px", threshold: 0 },
+      );
+
+      document.querySelectorAll("section[id]").forEach((section) => {
+        sectionObserver.observe(section);
+      });
+
+      // Blur nav links after click to clear browser focus ring
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => link.blur());
+      });
+
+      // ── Back to top button ────────────────────────────────────────────────────
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.scrollY > 400) {
+            backToTopBtn.classList.add("visible");
+          } else {
+            backToTopBtn.classList.remove("visible");
+          }
+        },
+        { passive: true },
+      );
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <!-- GoatCounter analytics — cookie-free, privacy-respecting page view tracking -->
+    <script
+      data-goatcounter="https://cmbdev.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+
+    <!-- Show the visitor bar only when GoatCounter successfully populates the count span.
+       The bar is hidden by default (display:none in CSS) to avoid showing "visitors: "
+       with no number when the API is unreachable or the counter setting is disabled. -->
+    <script>
+      (function () {
+        var span = document.querySelector(".goatcounter-count");
+        var bar = document.querySelector(".visitor-bar");
+        if (!span || !bar) return;
+
+        // GoatCounter's count.js sets textContent on the span after the window load
+        // event fires. Use a MutationObserver to detect that write and reveal the bar.
+        var observer = new MutationObserver(function () {
+          if (span.textContent.trim() !== "") {
+            bar.style.display = "";
+            observer.disconnect();
+          }
+        });
+        observer.observe(span, { childList: true, characterData: true, subtree: true });
+
+        // Safety: disconnect after 10 s so we never leave an orphaned observer.
+        setTimeout(function () {
+          observer.disconnect();
+        }, 10000);
+      })();
+    </script>
+  </body>
 </html>
