@@ -1,6 +1,6 @@
-# Christopher M. Beaulieu — Personal Portfolio
+# Christopher Beaulieu — Personal Portfolio
 
-Personal portfolio site for Christopher M. Beaulieu, Senior Software Engineer. Single-page static site hosted on GitHub Pages.
+Personal portfolio site for Christopher Beaulieu, Senior Software Engineer. Single-page static site hosted on GitHub Pages.
 
 **Live site:** https://christopherbeaulieu.net
 
