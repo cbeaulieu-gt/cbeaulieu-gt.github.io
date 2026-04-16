@@ -2,7 +2,7 @@
 
 Personal portfolio site for Christopher M. Beaulieu, Senior Software Engineer. Single-page static site hosted on GitHub Pages.
 
-**Live site:** https://cbeaulieu-gt.github.io
+**Live site:** https://christopherbeaulieu.net
 
 ---
 
