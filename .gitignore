@@ -18,5 +18,8 @@ desktop.ini
 # Node modules — in case someone forks and adds tooling
 node_modules/
 
+# Generated npm lockfile — project deliberately ships without a committed lockfile
+package-lock.json
+
 # Local git worktrees — created via superpowers:using-git-worktrees skill
 .worktrees/
