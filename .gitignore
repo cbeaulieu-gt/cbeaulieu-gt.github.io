@@ -17,3 +17,6 @@ desktop.ini
 
 # Node modules — in case someone forks and adds tooling
 node_modules/
+
+# Local git worktrees — created via superpowers:using-git-worktrees skill
+.worktrees/
