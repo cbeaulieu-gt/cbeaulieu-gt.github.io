@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cbeaulieu-gt.github.io/sitemap.xml
+Sitemap: https://christopherbeaulieu.net/sitemap.xml
