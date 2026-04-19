@@ -1330,7 +1330,7 @@
         <p>
           &copy; <span id="year"></span> Christopher Beaulieu. Built and hosted on GitHub Pages.
         </p>
-        <p class="visitor-bar">visitors: <span class="goatcounter-count" data-path="/"></span></p>
+        <p class="visitor-bar" id="gc-visitor-bar"></p>
       </div>
     </footer>
 
@@ -1465,27 +1465,39 @@
       src="//gc.zgo.at/count.js"
     ></script>
 
-    <!-- Show the visitor bar only when GoatCounter successfully populates the count span.
-       The bar is hidden by default (display:none in CSS) to avoid showing "visitors: "
-       with no number when the API is unreachable or the counter setting is disabled. -->
+    <!-- GoatCounter on-page visitor counter display.
+       count.js is tracking-only; the visitor counter requires an explicit
+       window.goatcounter.visit_count() call after count.js has loaded.
+       The bar is hidden by default (display:none in CSS) and revealed only when
+       GoatCounter successfully injects the count widget — avoiding a bare label
+       when the API is unreachable or the "Allow visitor counts" setting is off. -->
     <script>
       (function () {
-        var span = document.querySelector(".goatcounter-count");
         var bar = document.querySelector(".visitor-bar");
-        if (!span || !bar) return;
+        if (!bar) return;
 
-        // GoatCounter's count.js sets textContent on the span after the window load
-        // event fires. Use a MutationObserver to detect that write and reveal the bar.
+        // Poll until count.js has initialised window.goatcounter, then request
+        // the visitor count widget appended directly into the bar element.
+        var t = setInterval(function () {
+          if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t);
+            window.goatcounter.visit_count({ append: ".visitor-bar", no_branding: true });
+          }
+        }, 100);
+
+        // Use a MutationObserver to reveal the bar the moment GoatCounter injects
+        // count content into it — avoids flashing an empty bar.
         var observer = new MutationObserver(function () {
-          if (span.textContent.trim() !== "") {
+          if (bar.children.length > 0) {
             bar.style.display = "";
             observer.disconnect();
           }
         });
-        observer.observe(span, { childList: true, characterData: true, subtree: true });
+        observer.observe(bar, { childList: true });
 
-        // Safety: disconnect after 10 s so we never leave an orphaned observer.
+        // Safety: stop polling and disconnect after 10 s if GoatCounter never loads.
         setTimeout(function () {
+          clearInterval(t);
           observer.disconnect();
         }, 10000);
       })();
