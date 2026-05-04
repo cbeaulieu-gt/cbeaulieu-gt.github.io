@@ -73,7 +73,9 @@
         -webkit-font-smoothing: antialiased;
         background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
         background-size: 20px 20px;
+        overflow-wrap: break-word;
       }
+      html, body { overflow-x: clip; }
 
       a { color: var(--cyan); text-decoration: none; transition: opacity 150ms ease; }
       a:hover { opacity: 0.8; }
@@ -397,6 +399,12 @@
         grid-template-columns: 1fr 1fr;
         gap: 56px 64px;
       }
+      /* CSS Grid items default to min-width: auto (sized to content's minimum
+         intrinsic size = longest unbreakable word). Override to 0 so the body's
+         overflow-wrap: break-word can actually kick in for the tech-name strings
+         in .stack-tools that have no whitespace between separator spans. Also
+         applied to .stack-also (flex container) for the same reason. */
+      .stack-grid > *, .stack-also { min-width: 0; }
       .stack-domain {
         padding-top: 4px;
         border-top: 2px solid var(--ink);
