@@ -662,6 +662,17 @@
         color: var(--mute);
         letter-spacing: 0.14em; text-transform: uppercase;
       }
+      .visitor-bar {
+        margin-top: 8px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--mute);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        /* Hidden by default; shown via JS once GoatCounter populates the count span */
+        display: none;
+      }
 
       /* ─── BACK TO TOP ─── */
       .back-to-top {
@@ -1098,6 +1109,7 @@
           <span>Built and hosted on GitHub Pages</span>
           <span>v3.0.0 · Coconut Creek · Earth</span>
         </div>
+        <p class="visitor-bar" id="gc-visitor-bar" aria-label="Visitor count"></p>
       </div>
     </footer>
 
@@ -1268,6 +1280,51 @@
         else btt.classList.remove("visible");
       }, { passive: true });
       btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    </script>
+
+    <!-- GoatCounter analytics — cookie-free, privacy-respecting page view tracking -->
+    <script
+      data-goatcounter="https://cmbdev.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+
+    <!-- GoatCounter on-page visitor counter display.
+       count.js is tracking-only; the visitor counter requires an explicit
+       window.goatcounter.visit_count() call after count.js has loaded.
+       The bar is hidden by default (display:none in CSS) and revealed only when
+       GoatCounter successfully injects the count widget — avoiding a bare label
+       when the API is unreachable or the "Allow visitor counts" setting is off. -->
+    <script>
+      (function () {
+        var bar = document.querySelector(".visitor-bar");
+        if (!bar) return;
+
+        // Poll until count.js has initialised window.goatcounter, then request
+        // the visitor count widget appended directly into the bar element.
+        var t = setInterval(function () {
+          if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t);
+            window.goatcounter.visit_count({ append: ".visitor-bar", no_branding: true });
+          }
+        }, 100);
+
+        // Use a MutationObserver to reveal the bar the moment GoatCounter injects
+        // count content into it — avoids flashing an empty bar.
+        var observer = new MutationObserver(function () {
+          if (bar.children.length > 0) {
+            bar.style.display = "";
+            observer.disconnect();
+          }
+        });
+        observer.observe(bar, { childList: true });
+
+        // Safety: stop polling and disconnect after 10 s if GoatCounter never loads.
+        setTimeout(function () {
+          clearInterval(t);
+          observer.disconnect();
+        }, 10000);
+      })();
     </script>
   </body>
 </html>
