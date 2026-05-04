@@ -111,8 +111,14 @@
         color: var(--ink); font-size: 22px; cursor: pointer;
         padding: 4px 8px;
       }
+      /* Drawer extends to top: 0 and uses padding-top to push its first link
+         below the nav. The nav's higher z-index (100 > 99) keeps it painting
+         on top of the drawer area. This avoids the sub-pixel bleed-through
+         that occurred when the drawer's top edge was hand-tuned to match the
+         nav's rendered bottom edge — see issue #54. */
       .nav-drawer {
-        position: fixed; top: 35px; left: 0; right: 0;
+        position: fixed; top: 0; left: 0; right: 0;
+        padding-top: 35px;
         background: var(--bg);
         border-bottom: 1px solid var(--rule-strong);
         z-index: 99;
