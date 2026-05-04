@@ -111,8 +111,17 @@
         color: var(--ink); font-size: 22px; cursor: pointer;
         padding: 4px 8px;
       }
+      /* Drawer extends to top: 0 and uses padding-top to clear the nav.
+         padding-top: 48px is sized for the MOBILE nav height — on mobile
+         the .nav-burger (font-size: 22px, display: block) becomes the tallest
+         flex child of .nav-inner and drives total nav height to ~46–52px,
+         well above the desktop math of 8+17.6+8+1 = ~35px. The drawer only
+         opens on mobile (burger is display: none on desktop), so we tune for
+         the burger-driven height. The nav's higher z-index (100 > 99) keeps
+         it painting on top, producing an iOS-sheet style. See issue #54. */
       .nav-drawer {
-        position: fixed; top: 35px; left: 0; right: 0;
+        position: fixed; top: 0; left: 0; right: 0;
+        padding-top: 48px;
         background: var(--bg);
         border-bottom: 1px solid var(--rule-strong);
         z-index: 99;
