@@ -73,7 +73,9 @@
         -webkit-font-smoothing: antialiased;
         background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
         background-size: 20px 20px;
+        overflow-wrap: break-word;
       }
+      html, body { overflow-x: clip; }
 
       a { color: var(--cyan); text-decoration: none; transition: opacity 150ms ease; }
       a:hover { opacity: 0.8; }
