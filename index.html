@@ -624,6 +624,14 @@
         grid-template-columns: 1.3fr 1fr;
         gap: 40px; align-items: end;
       }
+      /* min-width: 0 lets the grid items shrink below their content's
+         intrinsic min-width (the unbreakable email in .contact-cta).
+         max-width: 100% on the inline-flex CTA caps it at parent width
+         once the parent is willing to shrink. Together they let body's
+         overflow-wrap: break-word actually fire on the email text.
+         Mirrors the .stack-grid fix from PR #53. See issue #56. */
+      .contact-grid > * { min-width: 0; }
+      .contact-cta { max-width: 100%; }
       .contact-headline {
         font-family: var(--display); font-size: clamp(48px, 8vw, 72px);
         color: var(--ink); line-height: 1; letter-spacing: -0.03em;
