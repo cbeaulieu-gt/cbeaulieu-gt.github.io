@@ -647,8 +647,15 @@
         margin-top: 24px;
         padding: 16px 22px;
         background: var(--green); color: var(--bg);
-        font-family: var(--mono); font-size: 12.5px;
-        font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+        font-family: var(--mono);
+        /* Fluid font-size: floor 9.5px on narrow phones, ceiling 12.5px on
+           desktop. Pairs with overflow-wrap: anywhere so the unbreakable
+           email (no spaces) can break mid-token if a viewport is still
+           narrower than the floor allows. Mirrors the clamp() pattern used
+           by .contact-headline above. See issue #58. */
+        font-size: clamp(9.5px, 3vw, 12.5px);
+        font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+        overflow-wrap: anywhere; word-break: break-word;
         border-radius: 4px;
         transition: transform 150ms ease, box-shadow 150ms ease;
       }
