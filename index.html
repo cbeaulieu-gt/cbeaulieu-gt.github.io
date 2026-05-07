@@ -1286,6 +1286,18 @@
           const t = el.getBoundingClientRect().top;
           if (t >= 0 && t < bestTop) { bestTop = t; activeId = id; }
         });
+        // Fallback: while scrolling up inside a section its top is negative,
+        // so the loop above yields nothing. Pick the intersecting section with
+        // the greatest (least-negative) top — i.e. the one the viewport is in.
+        if (!activeId) {
+          let bestFallbackTop = -Infinity;
+          intersecting.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const t = el.getBoundingClientRect().top;
+            if (t > bestFallbackTop) { bestFallbackTop = t; activeId = id; }
+          });
+        }
         navLinks.forEach(l => l.classList.remove("active"));
         if (activeId) {
           document.querySelectorAll(`.nav-links a[href="#${activeId}"], .nav-drawer a[href="#${activeId}"]`).forEach(l => l.classList.add("active"));
