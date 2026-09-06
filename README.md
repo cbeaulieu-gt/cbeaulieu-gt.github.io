@@ -53,7 +53,13 @@ Verify formatting without writing changes (useful in CI):
 npm run check
 ```
 
-CI runs `npm run check` automatically on every push to `main` and every pull request via [`.github/workflows/format.yml`](.github/workflows/format.yml).
+Run the profile content and résumé artifact checks:
+
+```bash
+npm test
+```
+
+CI runs `npm run check` and `npm test` automatically on every push to `main` and every pull request via [`.github/workflows/format.yml`](.github/workflows/format.yml).
 
 ---
 
